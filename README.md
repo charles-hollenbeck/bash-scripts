@@ -1,8 +1,4 @@
 ## Scripts Usage ##
 
-* #### rme ####
-
-    rme file1 file2 file3
-* #### gitpush ####
-
-    gitpush remote1 remote2 remote3
+### rme ###: rme file1 file2 file3
+### gitpush ###: gitpush remote1 remote2 remote3
