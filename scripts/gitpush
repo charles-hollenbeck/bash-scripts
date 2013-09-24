@@ -4,5 +4,5 @@
 
 for var in "$@"
   do
-    git push -u "$var" master
+    git push "$var" master
   done
