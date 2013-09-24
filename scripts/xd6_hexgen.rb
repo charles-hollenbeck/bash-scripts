@@ -12,4 +12,8 @@ for i in 1..count
   names += gets.downcase.getbyte(0)
 end
 
-puts "\n=============\n" + "     " + "x" + names.to_s(16).upcase + "\n=============";
+group_name = "x#{names.to_s(16).upcase}"
+
+puts "=" * (group_name.length + 2)
+puts " #{group_name} "
+puts "=" * (group_name.length + 2)
