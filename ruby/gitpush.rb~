@@ -10,11 +10,11 @@ verbose = false
 ARGV.each do|a|
   if a == "-t" or a == "--tags" and tags == false
     tags = true
-  elsif a == "-b" or a == "--branches" and mult_branch == false
+  else if a == "-b" or a == "--branches" and mult_branch == false
     mult_branch = true
-  elsif a == "-v" or a == "--verbose" and verbose == false
+  else if a == "-v" or a == "--verbose" and verbose == false
     verbose == true
-  elsif mult_branch
+  else if mult_branch
     branches << a
   else
     remotes << a
@@ -29,11 +29,11 @@ for i in 0..branches.count
     if verbose
       puts %x(cmd)
     else
-      puts "Pushing branch \"#{branches[i]}\" to remote \"#{remotes[j]}\""
+      puts "Pushing branch \"#{branches[i]}\" to remote \"#{remotes[j]}\"" + (" with tags" if tags)
       if system(cmd)
         puts "Push successful"
       else
-        puts "Push failed! (Try using the -v tag for a more verbose output)"
+        puts "Push failed! (Try using the -v tag for a more verbose output"
       end
     end
   end
