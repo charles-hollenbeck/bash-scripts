@@ -1,0 +1,8 @@
+#!/bin/bash
+#Simple script to push to muliple git repos at once
+#Usage: gitpush remote1 remote2 remote3
+
+for var in "$@"
+  do
+    git push "$var" master
+  done
