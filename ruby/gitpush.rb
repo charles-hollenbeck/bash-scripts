@@ -15,10 +15,8 @@ class String
   end
 end
 
-remotes = Array.new
-branches = Array.new
-tags = false
-mult_branch = false
+remotes, branches = Array.new, Array.new
+tags, mult_branch = false, false
 
 ARGV.each do|a|
   if a == "-t" or a == "--tags" and tags == false
