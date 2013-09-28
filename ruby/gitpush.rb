@@ -1,5 +1,27 @@
 #!/usr/bin/env ruby
 #Simple argument to push to multiple git remotes and branches
+class String
+  # colorization
+  def colorize(color_code)
+    "\e[#{color_code}m#{self}\e[0m"
+  end
+
+  def red
+    colorize(31)
+  end
+
+  def green
+    colorize(32)
+  end
+
+  def yellow
+    colorize(33)
+  end
+
+  def pink
+    colorize(35)
+  end
+end
 
 remotes = Array.new
 branches = Array.new
@@ -24,12 +46,12 @@ for j in 0..(remotes.count-1)
   for i in 0..(branches.count-1)
     cmd = "git push #{remotes[j]} #{branches[i]}"
     cmd += " --tags" if tags
-    puts "Pushing branch \"#{branches[i]}\" to remote \"#{remotes[j]}\""
+    puts "Pushing branch \"#{branches[i]}\" to remote \"#{remotes[j]}\"".yellow
 
     if system(cmd)
-      puts "Push successful"
+      puts "Push successful".green
     else
-      puts "Push failed!"
+      puts "Push failed!".red
     end
   end
 end
