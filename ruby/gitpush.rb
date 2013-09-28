@@ -19,8 +19,9 @@ ARGV.each do|a|
 end
 
 branches << "master" unless mult_branch
-for j in 0..remotes.count
-  for i in 0..branches.count
+
+for j in 0..(remotes.count-1)
+  for i in 0..(branches.count-1)
     cmd = "git push #{remotes[j]} #{branches[i]}"
     cmd += " --tags" if tags
     puts "Pushing branch \"#{branches[i]}\" to remote \"#{remotes[j]}\""
@@ -28,7 +29,7 @@ for j in 0..remotes.count
     if system(cmd)
       puts "Push successful"
     else
-      puts "Push failed! (Try using the -v tag for a more verbose output)"
+      puts "Push failed!"
     end
   end
 end
