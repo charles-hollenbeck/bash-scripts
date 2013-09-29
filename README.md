@@ -15,7 +15,7 @@ _Scripts can be run from directory using ./scriptname_
 2. **GITPUSH**
 > Pushes to multiple git repos at once
 >
-> Usage: `gitpush remote1 remote2 remote3 ...`
+> Usage: `gitpush remote1 remote2 remote3 [(-b or --branches) branch1 branch2] [(-t or --tags)]`
 >
 > ![gitpush](http://i.imgur.com/fvtvONf.png)
 
