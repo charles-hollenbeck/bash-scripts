@@ -33,9 +33,8 @@ for i in 1..count
   names += gets.downcase.getbyte(0)
 end
 
-group_name = "Group Name: ".bold.yellow + "x#{names.to_s(16).upcase}".cyan
-group_name_len = group_name.length - ("".bold.yellow.cyan.length) #Hacks #YOLO
+group_name = "|  ".red + "Group Name: ".bold.yellow + "x#{names.to_s(16).upcase}".cyan + "  |".red
+group_name_len = group_name.length - ("".bold.yellow.cyan.red.red.length) #Hacks #YOLO
+bar = "=".red * group_name_len
 
-puts "=".red * (group_name_len + 4)
-puts "  #{group_name}  "
-puts "=".red * (group_name_len + 4)
+puts "#{bar}\n#{group_name}\n#{bar}"
