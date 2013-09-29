@@ -19,7 +19,7 @@ _Scripts can be run from directory using ./scriptname_
 >
 > \* By default the command uses the "master" branch if no branch(es) are sent
 >
-> ![gitpush](http://i.imgur.com/fvtvONf.png)
+> ![gitpush](http://i.imgur.com/onJb9zM.png)
 
 3. **XD6_HEXGEN**
 > Creates quick company/group names using the creator(s) names
