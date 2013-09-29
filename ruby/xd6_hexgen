@@ -26,7 +26,7 @@ require 'active_support/core_ext/integer/inflections'
 
 print "Enter number of people: ".yellow
 count = gets.to_i
-names = 0;
+names = 0
 
 for i in 1..count
   print "Enter the ".yellow + "#{i.ordinalize.bold.yellow}" + " person's name: ".yellow
