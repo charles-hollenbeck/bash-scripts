@@ -1,5 +1,6 @@
 #!/usr/bin/env ruby
 #Simple argument to push to multiple git remotes and branches
+
 class String
   def colorize(color_code)
     "\e[#{color_code}m#{self}\e[0m"

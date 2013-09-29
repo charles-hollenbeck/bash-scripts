@@ -1,19 +1,38 @@
 #!/usr/bin/env ruby
 #This script is the math behind how xD6's name was created (Haxxed and Nexus were the names used)
 
+class String
+  # colorization
+  def colorize(color_code)
+    "\e[#{color_code}m#{self}\e[0m"
+  end
+  def red
+    colorize(31)
+  end
+  def green
+    colorize(32)
+  end
+  def yellow
+    colorize(33)
+  end
+  def cyan
+    colorize(36)
+  end
+end
+
 require 'active_support/core_ext/integer/inflections'
 
-print "Enter number of people: "
+print "Enter number of people: ".yellow
 count = gets.to_i
 names = 0;
 
 for i in 1..count
-  print "Enter the #{i.ordinalize} person's name: "
+  print "Enter the #{i.ordinalize} person's name: ".yellow
   names += gets.downcase.getbyte(0)
 end
 
-group_name = "x#{names.to_s(16).upcase}"
+group_name = "Group Name: x#{names.to_s(16).upcase}"
 
-puts "=" * (group_name.length + 2)
-puts " #{group_name} "
-puts "=" * (group_name.length + 2)
+puts "=".red * (group_name.length + 4)
+puts "  #{group_name}  ".cyan
+puts "=".red * (group_name.length + 4)
