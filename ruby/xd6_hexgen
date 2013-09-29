@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
-#This script is the math behind how xD6's name was created (Haxxed and Nexus were the names used)
+#This script is the math behind how XD6s name was created (Haxxed and Nexus were the names used)
 
 class String
   def colorize(color_code)
