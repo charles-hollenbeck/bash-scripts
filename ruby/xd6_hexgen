@@ -2,7 +2,6 @@
 #This script is the math behind how xD6's name was created (Haxxed and Nexus were the names used)
 
 class String
-  # colorization
   def colorize(color_code)
     "\e[#{color_code}m#{self}\e[0m"
   end
@@ -21,9 +20,6 @@ class String
   def bold
     "\e[1m#{self}\e[0m"
   end
-  def blink
-    "\e[5m#{self}\e[0m"
-  end
 end
 
 require 'active_support/core_ext/integer/inflections'
@@ -37,8 +33,9 @@ for i in 1..count
   names += gets.downcase.getbyte(0)
 end
 
-group_name = "Group Name: x#{names.to_s(16).upcase}"
+group_name = "Group Name: ".bold.yellow + "x#{names.to_s(16).upcase}".cyan
+group_name_len = group_name.length - ("".bold.yellow.cyan.length) #Hacks #YOLO
 
-puts "=".red * (group_name.length + 4)
-puts "  #{group_name}  ".cyan
-puts "=".red * (group_name.length + 4)
+puts "=".red * (group_name_len + 4)
+puts "  #{group_name}  "
+puts "=".red * (group_name_len + 4)
