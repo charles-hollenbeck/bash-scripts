@@ -26,4 +26,4 @@ _Scripts can be run from directory using ./scriptname_
 >
 > Usage: `xd6_hexgen` (It will ask for number of people and their names)
 >
-> ![xd6_hexgen](http://i.imgur.com/E2UQjiX.png)
+> ![xd6_hexgen](http://i.imgur.com/eyu4FOn.png?1)

@@ -18,6 +18,12 @@ class String
   def cyan
     colorize(36)
   end
+  def bold
+    "\e[1m#{self}\e[0m"
+  end
+  def blink
+    "\e[5m#{self}\e[0m"
+  end
 end
 
 require 'active_support/core_ext/integer/inflections'
@@ -27,7 +33,7 @@ count = gets.to_i
 names = 0;
 
 for i in 1..count
-  print "Enter the #{i.ordinalize} person's name: ".yellow
+  print "Enter the ".yellow + "#{i.ordinalize.bold.yellow}" + " person's name: ".yellow
   names += gets.downcase.getbyte(0)
 end
 
