@@ -38,11 +38,6 @@ for j in 0..(remotes.count-1)
     cmd = "git push #{remotes[j]} #{branches[i]}"
     cmd += " --tags" if tags
     puts "Pushing branch \"#{branches[i]}\" to remote \"#{remotes[j]}\"".yellow
-
-    if system(cmd)
-      puts "Push successful".green
-    else
-      puts "Push failed!".red
-    end
+    puts system(cmd) ? "Push successful".green : "Push failed!".red 
   end
 end
