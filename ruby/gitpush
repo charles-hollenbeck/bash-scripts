@@ -1,19 +1,14 @@
 #!/usr/bin/env ruby
-#Simple argument to push to multiple git remotes and branches
+# Simple script to push to multiple git remotes and branches with or without tags
+# Command: gitpush
+# Args: remote1 remote2 remote3 [(-b or --branches) branch1 branch2]* [(-t or --tags)]
+# Example: gitpush remote1 remote2 remote3 [(-b or --branches) branch1 branch2]* [(-t or --tags)]
 
 class String
-  def colorize(color_code)
-    "\e[#{color_code}m#{self}\e[0m"
-  end
-  def red
-    colorize(31)
-  end
-  def green
-    colorize(32)
-  end
-  def yellow
-    colorize(33)
-  end
+  def colorize(color_code) "\e[#{color_code}m#{self}\e[0m" end
+  def red; colorize(31) end
+  def green; colorize(32) end
+  def yellow; colorize(33) end
 end
 
 remotes, branches = Array.new, Array.new
